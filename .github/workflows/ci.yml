@@ -14,3 +14,11 @@ jobs:
               run: pip install pytest
             - name: Exécuter les tests
               run: python -m unittest test_app.py
+    
+    deploy:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Déclencher le déploiement sur Render
+              run: |
+                curl -X POST "https://api.render.com/deploy/srv-d5de0jmmcj7s73c297p0?key=MCr2Ln1GBhU"
