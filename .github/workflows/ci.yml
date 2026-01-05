@@ -17,8 +17,8 @@ jobs:
             - name: Analyse du code avec SonarQube
               run: |
                 sonar-scanner \
-                -Dsonar.organization=VOTRE_ORG \
-                -Dsonar.projectKey=VOTRE_PROJET \
+                -Dsonar.organization=zaheryamak \
+                -Dsonar.projectKey=zaheryamak_tp-ci-cd_2026 \
                 -Dsonar.sources=. \
                 -Dsonar.host.url=https://sonarcloud.io \
                 -Dsonar.login=$SONAR_TOKEN
