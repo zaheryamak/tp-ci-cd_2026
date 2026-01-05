@@ -14,7 +14,14 @@ jobs:
               run: pip install pytest
             - name: Exécuter les tests
               run: python -m unittest test_app.py
-    
+            - name: Analyse du code avec SonarQube
+              run: |
+                sonar-scanner \
+                -Dsonar.organization=VOTRE_ORG \
+                -Dsonar.projectKey=VOTRE_PROJET \
+                -Dsonar.sources=. \
+                -Dsonar.host.url=https://sonarcloud.io \
+                -Dsonar.login=$SONAR_TOKEN
     deploy:
         needs: test
         runs-on: ubuntu-latest
