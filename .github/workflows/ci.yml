@@ -23,6 +23,10 @@ jobs:
                   -Dsonar.organization=zaheryamak
                   -Dsonar.projectKey=zaheryamak_tp-ci-cd_2026
                   -Dsonar.sources=.
+            - name: Analyse des dépendances avec Snyk
+              run: snyk test --all-projects
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     deploy:
         needs: test
         runs-on: ubuntu-latest
