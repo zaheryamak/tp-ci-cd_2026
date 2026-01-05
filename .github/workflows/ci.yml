@@ -27,7 +27,7 @@ jobs:
                   -Dsonar.projectKey=zaheryamak_tp-ci-cd_2026
                   -Dsonar.sources=.
             - name: Analyse des dépendances avec Snyk
-              uses: snyk/actions/python@v2
+              uses: snyk/actions/python@main
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     deploy:
